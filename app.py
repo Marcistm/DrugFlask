@@ -57,7 +57,7 @@ def delete():
 def login():
     work_id = request.args.get('work_id')
     passwd = request.args.get('password')
-    sql = text(f"select privilege,password from where username = '{work_id}'")
+    sql = text(f"select privilege,password from [User] where username = '{work_id}'")
     result = db.session.execute(sql)
     column_names = result.keys()
     records = []
